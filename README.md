@@ -1,56 +1,4 @@
-# Next.js Self Hosting Example
-
-This repo shows how to deploy a Next.js app and a PostgreSQL database on a Ubuntu Linux server using Docker and Nginx. It showcases using several features of Next.js like caching, ISR, environment variables, and more.
-
-[**📹 Watch the tutorial (45m)**](https://www.youtube.com/watch?v=sIVL4JMqRfc)
-
-[![Self Hosting Video Thumbnail](https://img.youtube.com/vi/sIVL4JMqRfc/0.jpg)](https://www.youtube.com/watch?v=sIVL4JMqRfc)
-
-## Prerequisites
-
-1. Purchase a domain name
-2. Purchase a Linux Ubuntu server (e.g. [droplet](https://www.digitalocean.com/products/droplets))
-3. Create an `A` DNS record pointing to your server IPv4 address
-
-## Quickstart
-
-1. **SSH into your server**:
-
-   ```bash
-   ssh root@your_server_ip
-   ```
-
-2. **Download the deployment script**:
-
-   ```bash
-   curl -o ~/deploy.sh https://raw.githubusercontent.com/leerob/next-self-host/main/deploy.sh
-   ```
-
-   You can then modify the email and domain name variables inside of the script to use your own.
-
-3. **Run the deployment script**:
-
-   ```bash
-   chmod +x ~/deploy.sh
-   ./deploy.sh
-   ```
-
-## Supported Features
-
-This demo tries to showcase many different Next.js features.
-
-- Image Optimization
-- Streaming
-- Talking to a Postgres database
-- Caching
-- Incremental Static Regeneration
-- Reading environment variables
-- Using Middleware
-- Running code on server startup
-- A cron that hits a Route Handler
-
-View the demo at https://nextselfhost.dev to see further explanations.
-
+# Next.js Self Hosting
 ## Deploy Script
 
 I've included a Bash script which does the following:
@@ -63,12 +11,6 @@ I've included a Bash script which does the following:
 1. Sets up Nginx and configures HTTPS and rate limting
 1. Sets up a cron which clears the database every 10m
 1. Creates a `.env` file with your Postgres database creds
-
-Once the deployment completes, your Next.js app will be available at:
-
-```
-http://your-provided-domain.com
-```
 
 Both the Next.js app and PostgreSQL database will be up and running in Docker containers. To set up your database, you could install `npm` inside your Postgres container and use the Drizzle scripts, or you can use `psql`:
 
