@@ -2,7 +2,7 @@
 
 # Script Vars
 REPO_URL="https://github.com/elsewares/baconjs.git"
-APP_DIR=~/myapp
+APP_DIR=~/baconjs-app
 
 # Pull the latest changes from the Git repository
 if [ -d "$APP_DIR" ]; then
