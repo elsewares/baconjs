@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Github, Book, Users } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -8,17 +7,6 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 export default function Home() {
-  const [count, setCount] = useState(0)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
     <>
       <Head>
@@ -38,7 +26,7 @@ export default function Home() {
           />
         </div>
 
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-black/50 backdrop-blur-md' : ''}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md}`}>
           <div className="container mx-auto px-4 py-4">
             <nav className="flex justify-between items-center">
               <Link href="/">
@@ -124,8 +112,8 @@ export default function Home() {
                   <CardDescription>This counter is a Svelte component rendered in React using bacon.js</CardDescription>
                 </CardHeader>
                 <CardContent className="flex flex-col items-center">
-                  <div className="text-4xl font-bold mb-4">{count}</div>
-                  <Button onClick={() => setCount(count + 1)} className="bg-orange-600 hover:bg-orange-700 text-white">
+                  <div className="text-4xl font-bold mb-4">What?</div>
+                  <Button className="bg-orange-600 hover:bg-orange-700 text-white">
                     Increment
                   </Button>
                 </CardContent>
