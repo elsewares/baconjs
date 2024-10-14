@@ -17,6 +17,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
         />
+        <link rel="stylesheet" href="../public/main.css" />
       </head>
       <body>{children}</body>
     </html>
